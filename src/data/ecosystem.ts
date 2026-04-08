@@ -74,12 +74,4 @@ export const ecosystem: EcosystemComponent[] = [
     githubUrl: 'https://github.com/ek33450505/cast-claudes_journal',
     tapName: 'ek33450505/claudes-journal',
   },
-  {
-    name: 'JARVIS',
-    installCommand: 'brew tap ek33450505/jarvis && brew install jarvis',
-    description: 'Personal assistant with 8 PA agents',
-    version: 'v0.1.0',
-    githubUrl: 'https://github.com/ek33450505/jarvis',
-    tapName: 'ek33450505/jarvis',
-  },
 ]

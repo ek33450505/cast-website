@@ -11,13 +11,18 @@ export function CopyButton({ text, className }: CopyButtonProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err)
+    }
   }
 
   return (
     <button
+      type="button"
       onClick={handleCopy}
       className={cn(
         'inline-flex items-center justify-center rounded-md p-2 transition-colors',

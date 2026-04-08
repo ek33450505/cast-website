@@ -36,12 +36,16 @@ const item = {
 
 export function TerminalDemo() {
   return (
-    <div className="w-full max-w-2xl mx-auto rounded-xl border border-[var(--glass-border)] overflow-hidden bg-[#0D1117]">
+    <div
+      role="region"
+      aria-label="Terminal demo showing CAST agent dispatch"
+      className="w-full max-w-2xl mx-auto rounded-xl border border-[var(--glass-border)] overflow-hidden bg-[var(--bg-terminal)]"
+    >
       {/* Terminal chrome */}
       <div className="flex items-center gap-2 px-4 py-3 bg-[var(--bg-secondary)] border-b border-[var(--glass-border)]">
-        <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-        <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
-        <div className="w-3 h-3 rounded-full bg-[#28C840]" />
+        <div className="w-3 h-3 rounded-full bg-[var(--chrome-red)]" />
+        <div className="w-3 h-3 rounded-full bg-[var(--chrome-yellow)]" />
+        <div className="w-3 h-3 rounded-full bg-[var(--chrome-green)]" />
         <span className="ml-2 text-xs text-[var(--text-muted)] font-mono">cast-session</span>
       </div>
       {/* Terminal content */}

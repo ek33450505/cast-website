@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Terminal prompt chevron -->
+  <polyline points="6,22 18,32 6,42" stroke="#00FFC2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Agent nodes: center hub, upper-right, lower-right -->
+  <circle cx="38" cy="32" r="5" fill="#00FFC2"/>
+  <circle cx="56" cy="18" r="4" fill="#00FFC2" opacity="0.8"/>
+  <circle cx="56" cy="46" r="4" fill="#00FFC2" opacity="0.8"/>
+
+  <!-- Dispatch edges from hub to agents -->
+  <line x1="42.5" y1="28.5" x2="52.2" y2="21.2" stroke="#00FFC2" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="42.5" y1="35.5" x2="52.2" y2="42.8" stroke="#00FFC2" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Connector from chevron tip to hub -->
+  <line x1="20" y1="32" x2="33" y2="32" stroke="#00FFC2" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+</svg>

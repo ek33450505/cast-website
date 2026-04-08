@@ -34,9 +34,9 @@ export function DashboardPreview() {
           {/* Browser chrome mockup */}
           <div className="bento-card overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 bg-[var(--bg-tertiary)] border-b border-[var(--glass-border)]">
-              <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-              <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
-              <div className="w-3 h-3 rounded-full bg-[#28C840]" />
+              <div className="w-3 h-3 rounded-full bg-[var(--chrome-red)]" />
+              <div className="w-3 h-3 rounded-full bg-[var(--chrome-yellow)]" />
+              <div className="w-3 h-3 rounded-full bg-[var(--chrome-green)]" />
               <div className="ml-4 flex-1 bg-[var(--bg-primary)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono">
                 localhost:5173/activity
               </div>

@@ -95,7 +95,7 @@ export function Features() {
               variants={item}
               className="bento-card hover-lift p-6"
             >
-              <feature.icon className="h-8 w-8 text-[var(--accent)] mb-4" />
+              <feature.icon className="h-8 w-8 text-[var(--accent)] mb-4" aria-hidden="true" />
               <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
               <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 {feature.description}

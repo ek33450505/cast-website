@@ -38,10 +38,10 @@ export function AgentRoster() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-[var(--glass-border)] text-left">
-                <th className="px-6 py-4 text-[var(--text-muted)] font-medium">Agent</th>
-                <th className="px-6 py-4 text-[var(--text-muted)] font-medium">Model</th>
-                <th className="px-6 py-4 text-[var(--text-muted)] font-medium">Effort</th>
-                <th className="px-6 py-4 text-[var(--text-muted)] font-medium">Purpose</th>
+                <th scope="col" className="px-6 py-4 text-[var(--text-muted)] font-medium">Agent</th>
+                <th scope="col" className="px-6 py-4 text-[var(--text-muted)] font-medium">Model</th>
+                <th scope="col" className="px-6 py-4 text-[var(--text-muted)] font-medium">Effort</th>
+                <th scope="col" className="px-6 py-4 text-[var(--text-muted)] font-medium">Purpose</th>
               </tr>
             </thead>
             <tbody>

@@ -22,6 +22,10 @@
   --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --radius-card: 16px;
+  --bg-terminal: #0D1117;
+  --chrome-red: #FF5F57;
+  --chrome-yellow: #FEBC2E;
+  --chrome-green: #28C840;
 
   /* shadcn/ui aliases */
   --background: #070A0F;

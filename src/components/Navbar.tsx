@@ -31,8 +31,40 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="text-xl font-bold font-mono text-[var(--accent)] tracking-wider">
-            CAST
+          <a href="#" className="flex items-center gap-2 group" aria-label="CAST home">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 64 64"
+              fill="none"
+              className="h-6 w-6 shrink-0 text-[var(--accent)]"
+              aria-hidden="true"
+            >
+              <polyline
+                points="6,22 18,32 6,42"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="38" cy="32" r="5.5" fill="currentColor" />
+              <circle cx="56" cy="18" r="4.5" fill="currentColor" opacity="0.85" />
+              <circle cx="56" cy="46" r="4.5" fill="currentColor" opacity="0.85" />
+              <line
+                x1="43" y1="28.5" x2="52" y2="21.5"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.65"
+              />
+              <line
+                x1="43" y1="35.5" x2="52" y2="42.5"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.65"
+              />
+              <line
+                x1="20" y1="32" x2="32.5" y2="32"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.55"
+              />
+            </svg>
+            <span className="text-xl font-bold font-mono text-[var(--accent)] tracking-wider">
+              CAST
+            </span>
           </a>
 
           {/* Desktop nav */}

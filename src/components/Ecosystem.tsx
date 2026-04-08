@@ -64,10 +64,12 @@ export function Ecosystem() {
               <p className="text-sm text-[var(--text-muted)] mb-4 flex-1">
                 {comp.description}
               </p>
-              <div className="flex items-center gap-2 bg-[var(--bg-primary)] rounded-lg px-3 py-2 font-mono text-xs mb-3 overflow-x-auto">
-                <code className="text-[var(--text-secondary)] whitespace-nowrap flex-1">
-                  {comp.installCommand}
-                </code>
+              <div className="flex items-center gap-2 bg-[var(--bg-primary)] rounded-lg pl-3 pr-1 py-1 font-mono text-xs mb-3">
+                <div className="overflow-x-auto flex-1 py-1">
+                  <code className="text-[var(--text-secondary)] whitespace-nowrap">
+                    {comp.installCommand}
+                  </code>
+                </div>
                 <CopyButton text={comp.installCommand} className="shrink-0" />
               </div>
               <a
