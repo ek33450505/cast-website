@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Carbon Mint Design System */
+  --bg-primary: #070A0F;
+  --bg-secondary: #1A1D23;
+  --bg-tertiary: #252830;
+  --text-primary: #E6E8EE;
+  --text-secondary: #88A3D6;
+  --text-muted: #5a6c8a;
+  --accent: #00FFC2;
+  --accent-hover: #33FFD1;
+  --accent-subtle: rgba(0, 255, 194, 0.08);
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --border: rgba(255, 255, 255, 0.06);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --radius-card: 16px;
+
+  /* shadcn/ui aliases */
+  --background: #070A0F;
+  --foreground: #E6E8EE;
+  --card: #1A1D23;
+  --card-foreground: #E6E8EE;
+  --popover: #1A1D23;
+  --popover-foreground: #E6E8EE;
+  --primary: #00FFC2;
+  --primary-foreground: #070A0F;
+  --secondary: #252830;
+  --secondary-foreground: #88A3D6;
+  --muted: #252830;
+  --muted-foreground: #5a6c8a;
+  --accent-foreground: #00FFC2;
+  --destructive: #f87171;
+  --input: #252830;
+  --ring: #00FFC2;
+  --radius: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Geist Variable', 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre, .font-mono {
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+}
+
+.glass-surface {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(26, 29, 35, 0.8);
+  border: 1px solid var(--glass-border);
+}
+
+.bento-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  transition: all 0.2s ease;
+}
+
+.bento-card:hover {
+  border-color: rgba(0, 255, 194, 0.15);
+  box-shadow: 0 0 20px rgba(0, 255, 194, 0.05);
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 255, 194, 0.1);
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(0, 255, 194, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
