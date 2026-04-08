@@ -5,6 +5,7 @@ const links = [
   { label: 'Dashboard', href: 'https://github.com/ek33450505/claude-code-dashboard' },
   { label: 'dev.to', href: 'https://dev.to/ek33450505' },
   { label: 'Documentation', href: 'https://github.com/ek33450505/claude-agent-team#readme' },
+  { label: 'Portfolio', href: 'https://ek33450505.github.io/Edward_Kubiak/' },
 ]
 
 export function Footer() {
