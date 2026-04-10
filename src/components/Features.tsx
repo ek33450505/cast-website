@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Users, Shield, Database, Zap, HardDrive, Puzzle } from 'lucide-react'
+import { Users, Shield, Database, Zap, HardDrive, Puzzle, Radio, Cpu } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 interface Feature {
@@ -19,31 +19,43 @@ const features: Feature[] = [
     icon: Shield,
     title: 'Quality Gates',
     description:
-      'Raw git commit and push are hard-blocked by hooks. Every change gets a code-reviewer pass. Quality is enforced, not requested.',
+      'Raw git commit and push are hard-blocked by hooks. Prompt hooks guard sensitive files. Agent hooks run tests before push. Quality is enforced, not requested.',
   },
   {
     icon: Database,
     title: 'Full Observability',
     description:
-      'Every dispatch, session, and token spend logged to SQLite. A React dashboard shows activity, analytics, and agent status in real time.',
+      'Stream-JSON pipeline captures every tool call in real time. React dashboard shows activity, analytics, and hook events via SSE — all logged to SQLite.',
   },
   {
     icon: Zap,
     title: 'Cost Optimization',
     description:
-      'Haiku handles reviews, commits, and tests. Sonnet handles planning and implementation. 20x cost difference, routed automatically.',
+      'Haiku handles reviews, commits, and tests. Sonnet handles planning and implementation. Ollama handles commit messages locally. Automatic model routing by task complexity.',
   },
   {
     icon: HardDrive,
     title: 'Local-First',
     description:
-      'Zero cloud lock-in. Everything runs on your machine — agents, hooks, memory, database. Your code never leaves your environment.',
+      'Zero cloud lock-in. Everything runs on your machine — agents, hooks, memory, database. LiteLLM routes to local Ollama models when available.',
   },
   {
     icon: Puzzle,
     title: 'Extensible',
     description:
-      'Custom agents are markdown files. Hooks are bash scripts. Plans are JSON. Everything is human-readable and hackable.',
+      'Install with one command: claude plugin install or brew install. Custom agents are markdown files. Hooks are bash scripts. Plans are JSON.',
+  },
+  {
+    icon: Radio,
+    title: 'Event Streaming',
+    description:
+      'Channel event bus publishes to SSE subscribers in real time. HTTP hooks push to the dashboard. Stream-JSON consumer logs everything to cast.db.',
+  },
+  {
+    icon: Cpu,
+    title: 'Contractor Routing',
+    description:
+      'Route low-complexity tasks to local Ollama models via LiteLLM proxy. Quality gates validate output. Automatic fallback to Claude when contractors fail.',
   },
 ]
 
@@ -83,7 +95,7 @@ export function Features() {
         </motion.p>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={container}
           initial="hidden"
           whileInView="show"

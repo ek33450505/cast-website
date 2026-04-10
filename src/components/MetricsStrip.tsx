@@ -42,7 +42,7 @@ function AnimatedMetric({ value, suffix = '', label }: MetricProps) {
 
 const metrics = [
   { value: 17, label: 'Agents' },
-  { value: 357, label: 'Tests' },
+  { value: 432, label: 'Tests' },
   { value: 13, label: 'Repos' },
   { value: 450, suffix: '+', label: 'Cloners' },
 ]

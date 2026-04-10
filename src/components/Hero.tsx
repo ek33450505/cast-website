@@ -5,6 +5,7 @@ import { TerminalDemo } from './TerminalDemo'
 import { MetricsStrip } from './MetricsStrip'
 
 const installCmd = 'brew tap ek33450505/cast && brew install cast'
+const pluginCmd = 'claude plugin install github:ek33450505/claude-agent-team'
 
 export function Hero() {
   return (
@@ -38,16 +39,24 @@ export function Hero() {
           A local-first multi-agent framework for Claude Code
         </motion.p>
 
-        {/* Install command */}
+        {/* Install commands */}
         <motion.div
-          className="inline-flex items-center gap-2 bg-[var(--bg-secondary)] border border-[var(--glass-border)] rounded-xl px-4 py-3 font-mono text-sm"
+          className="flex flex-col items-center gap-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <span className="text-[var(--text-muted)]">$</span>
-          <code className="text-[var(--text-primary)] break-all">{installCmd}</code>
-          <CopyButton text={installCmd} />
+          <div className="inline-flex items-center gap-2 bg-[var(--bg-secondary)] border border-[var(--glass-border)] rounded-xl px-4 py-3 font-mono text-sm">
+            <span className="text-[var(--text-muted)]">$</span>
+            <code className="text-[var(--text-primary)] break-all">{installCmd}</code>
+            <CopyButton text={installCmd} />
+          </div>
+          <span className="text-xs text-[var(--text-muted)]">or</span>
+          <div className="inline-flex items-center gap-2 bg-[var(--bg-secondary)] border border-[var(--glass-border)] rounded-xl px-4 py-3 font-mono text-sm">
+            <span className="text-[var(--text-muted)]">$</span>
+            <code className="text-[var(--text-primary)] break-all">{pluginCmd}</code>
+            <CopyButton text={pluginCmd} />
+          </div>
         </motion.div>
 
         {/* CTAs */}

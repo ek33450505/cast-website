@@ -20,8 +20,8 @@ export function DashboardPreview() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          A full React dashboard for real-time agent observability. Track sessions, token spend,
-          agent activity, and hook health — all from your browser.
+          A full React dashboard with real-time SSE event streaming. Track sessions, token spend,
+          agent activity, hook health, and model routing analytics — all from your browser.
         </motion.p>
 
         <motion.div
@@ -50,12 +50,14 @@ export function DashboardPreview() {
                 <p className="text-sm text-[var(--text-muted)]">
                   Real-time agent observability
                 </p>
-                <div className="flex justify-center gap-6 text-xs text-[var(--text-muted)]">
+                <div className="flex flex-wrap justify-center gap-6 text-xs text-[var(--text-muted)]">
                   <span>Sessions</span>
                   <span>Analytics</span>
                   <span>Agents</span>
                   <span>Token Spend</span>
                   <span>Hooks</span>
+                  <span>Live Events</span>
+                  <span>Model Routing</span>
                 </div>
               </div>
             </div>
