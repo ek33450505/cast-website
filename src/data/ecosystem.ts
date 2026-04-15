@@ -13,7 +13,7 @@ export const ecosystem: EcosystemComponent[] = [
     name: 'CAST Core',
     installCommand: 'brew tap ek33450505/cast && brew install cast',
     description: 'The complete multi-agent framework',
-    version: 'v4.6',
+    version: 'v5.0',
     githubUrl: 'https://github.com/ek33450505/claude-agent-team',
     tapName: 'ek33450505/cast',
     highlighted: true,
@@ -21,7 +21,7 @@ export const ecosystem: EcosystemComponent[] = [
   {
     name: 'CAST Agents',
     installCommand: 'brew tap ek33450505/cast-agents && brew install cast-agents',
-    description: '17 specialist agent definitions',
+    description: '31 specialist agent definitions',
     version: 'v0.1.0',
     githubUrl: 'https://github.com/ek33450505/cast-agents',
     tapName: 'ek33450505/cast-agents',

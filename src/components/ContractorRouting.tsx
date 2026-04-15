@@ -1,5 +1,33 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle, XCircle, Cpu, Cloud } from 'lucide-react'
+import { Users, Zap, ArrowRight, Cpu, CheckCircle } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+
+interface OptLayer {
+  icon: LucideIcon
+  label: string
+  detail: string
+}
+
+const layers: OptLayer[] = [
+  { icon: Users, label: 'Model Tiering', detail: '21 Haiku / 10 Sonnet — right model for each task' },
+  { icon: Zap, label: 'Caveman Mode', detail: '15-25% output reduction via terse response rules' },
+  { icon: ArrowRight, label: 'RTK Hook', detail: '60-89% compression on tool outputs' },
+  { icon: Cpu, label: 'Thinking Budgets', detail: 'Per-agent extended thinking tiers (0-8192 tokens)' },
+  { icon: CheckCircle, label: 'Compact Discipline', detail: 'Auto-trigger at 40 tool calls per session' },
+]
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 15 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+}
 
 export function ContractorRouting() {
   return (
@@ -11,7 +39,7 @@ export function ContractorRouting() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Smart Model Routing
+          5-Layer Token Optimization
         </motion.h2>
         <motion.p
           className="text-center text-[var(--text-muted)] mb-12 max-w-2xl mx-auto"
@@ -20,61 +48,30 @@ export function ContractorRouting() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          Route low-complexity tasks to local Ollama models. Quality gates catch bad output.
-          Claude takes over automatically when contractors fail.
+          CAST reduces swarm token spend by 30-50% through intelligent model routing, output compression, and budget controls.
         </motion.p>
 
-        {/* Flow diagram */}
+        {/* 5-layer stack */}
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto space-y-3"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-50px' }}
         >
-          {/* Task */}
-          <div className="bento-card p-4 text-center min-w-[140px]">
-            <p className="text-xs text-[var(--text-muted)] mb-1">Task</p>
-            <p className="text-sm font-semibold">Commit Message</p>
-          </div>
-
-          <ArrowRight className="h-5 w-5 text-[var(--text-muted)] hidden md:block" />
-
-          {/* LiteLLM Router */}
-          <div className="bento-card p-4 text-center min-w-[140px] border-[var(--accent)] border">
-            <p className="text-xs text-[var(--text-muted)] mb-1">LiteLLM Proxy</p>
-            <p className="text-sm font-semibold text-[var(--accent)]">Route</p>
-          </div>
-
-          <ArrowRight className="h-5 w-5 text-[var(--text-muted)] hidden md:block" />
-
-          {/* Ollama */}
-          <div className="bento-card p-4 text-center min-w-[140px]">
-            <Cpu className="h-5 w-5 mx-auto mb-1 text-green-400" />
-            <p className="text-xs text-[var(--text-muted)] mb-1">Local</p>
-            <p className="text-sm font-semibold">Ollama</p>
-          </div>
-
-          <ArrowRight className="h-5 w-5 text-[var(--text-muted)] hidden md:block" />
-
-          {/* Quality Gate */}
-          <div className="bento-card p-4 text-center min-w-[140px]">
-            <div className="flex justify-center gap-2 mb-1">
-              <CheckCircle className="h-4 w-4 text-green-400" />
-              <XCircle className="h-4 w-4 text-red-400" />
-            </div>
-            <p className="text-xs text-[var(--text-muted)] mb-1">Quality Gate</p>
-            <p className="text-sm font-semibold">Validate</p>
-          </div>
-
-          <ArrowRight className="h-5 w-5 text-[var(--text-muted)] hidden md:block" />
-
-          {/* Result */}
-          <div className="bento-card p-4 text-center min-w-[140px]">
-            <Cloud className="h-5 w-5 mx-auto mb-1 text-blue-400" />
-            <p className="text-xs text-[var(--text-muted)] mb-1">Fallback</p>
-            <p className="text-sm font-semibold">Claude</p>
-          </div>
+          {layers.map((layer) => (
+            <motion.div
+              key={layer.label}
+              variants={item}
+              className="bento-card p-4 flex items-center gap-4"
+            >
+              <layer.icon className="h-6 w-6 text-[var(--accent)] shrink-0" aria-hidden="true" />
+              <div>
+                <p className="font-semibold text-sm text-[var(--text-primary)]">{layer.label}</p>
+                <p className="text-sm text-[var(--text-muted)]">{layer.detail}</p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Stats */}
@@ -86,16 +83,16 @@ export function ContractorRouting() {
           transition={{ delay: 0.3 }}
         >
           <div>
-            <p className="text-2xl font-bold font-mono text-[var(--accent)]">$0</p>
-            <p className="text-xs text-[var(--text-muted)]">per local task</p>
+            <p className="text-2xl font-bold font-mono text-[var(--accent)]">30-50%</p>
+            <p className="text-xs text-[var(--text-muted)]">token savings</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-[var(--accent)]">&lt;1s</p>
-            <p className="text-xs text-[var(--text-muted)]">local latency</p>
+            <p className="text-2xl font-bold font-mono text-[var(--accent)]">21/10</p>
+            <p className="text-xs text-[var(--text-muted)]">Haiku/Sonnet split</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-[var(--accent)]">Auto</p>
-            <p className="text-xs text-[var(--text-muted)]">fallback to Claude</p>
+            <p className="text-2xl font-bold font-mono text-[var(--accent)]">525</p>
+            <p className="text-xs text-[var(--text-muted)]">tests passing</p>
           </div>
         </motion.div>
       </div>

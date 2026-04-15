@@ -11,51 +11,51 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: Users,
-    title: 'Agent Dispatch',
+    title: 'Agent Teams',
     description:
-      '17 specialists route automatically. Code changes go to code-writer, failures to debugger, scripts to bash-specialist. No config needed.',
+      '31 specialists across 4 tiers. Swarm Control Plane bootstraps parallel agent teams from YAML. Each teammate gets an isolated git worktree and quality gates.',
   },
   {
     icon: Shield,
     title: 'Quality Gates',
     description:
-      'Raw git commit and push are hard-blocked by hooks. Prompt hooks guard sensitive files. Agent hooks run tests before push. Quality is enforced, not requested.',
+      'Raw git commit and push are hard-blocked by hooks. Structured Output schemas validate every agent response. Code ships through the commit agent or not at all.',
   },
   {
     icon: Database,
     title: 'Full Observability',
     description:
-      'Stream-JSON pipeline captures every tool call in real time. React dashboard shows activity, analytics, and hook events via SSE — all logged to SQLite.',
+      'cast.db v8 tracks 8 tables across sessions, agent runs, swarm activity, and quality gates. React dashboard v2.1 with 7 pages and real-time SSE streaming.',
   },
   {
     icon: Zap,
-    title: 'Cost Optimization',
+    title: 'Token Optimization',
     description:
-      'Haiku handles reviews, commits, and tests. Sonnet handles planning and implementation. Ollama handles commit messages locally. Automatic model routing by task complexity.',
+      '5-layer cost reduction: model tiering (21 Haiku / 10 Sonnet), Caveman Mode, RTK Hook with 60-89% compression, Thinking Budgets, and Compact Discipline. 30-50% savings.',
   },
   {
     icon: HardDrive,
-    title: 'Local-First',
+    title: 'Peer Gossip Protocol',
     description:
-      'Zero cloud lock-in. Everything runs on your machine — agents, hooks, memory, database. LiteLLM routes to local Ollama models when available.',
+      'Decentralized agent-to-agent messaging via cast.db. Four message types — task claims, status updates, peer queries, idle events. No central broker needed.',
   },
   {
     icon: Puzzle,
     title: 'Extensible',
     description:
-      'Install with one command: claude plugin install or brew install. Custom agents are markdown files. Hooks are bash scripts. Plans are JSON.',
+      'Agents are markdown files. Hooks are bash scripts. Plans are JSON. 14 skills, 19 slash commands, and 4 MCP integrations — Todoist, Calendar, Gmail, Obsidian.',
   },
   {
     icon: Radio,
-    title: 'Event Streaming',
+    title: 'Swarm Control Plane',
     description:
-      'Channel event bus publishes to SSE subscribers in real time. HTTP hooks push to the dashboard. Stream-JSON consumer logs everything to cast.db.',
+      'Define agent teams in YAML. CAST creates worktrees, seeds identity preambles, enforces policies, and streams events to cast.db. The control layer for Anthropic Agent Teams.',
   },
   {
     icon: Cpu,
-    title: 'Contractor Routing',
+    title: 'Local-First',
     description:
-      'Route low-complexity tasks to local Ollama models via LiteLLM proxy. Quality gates validate output. Automatic fallback to Claude when contractors fail.',
+      'Zero cloud lock-in. Everything runs on your machine — agents, hooks, memory, database. Ollama fallback via LiteLLM proxy. All data stays in SQLite.',
   },
 ]
 

@@ -19,8 +19,8 @@ export function Architecture() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          Hooks intercept Claude Code tool calls. Directives route to specialist agents.
-          Quality gates enforce standards. Everything is logged.
+          The Swarm Control Plane wraps Anthropic Agent Teams with quality gates, peer gossip, and full observability.
+          Hooks intercept tool calls. Directives route to specialists. Everything lands in cast.db.
         </motion.p>
 
         <motion.div

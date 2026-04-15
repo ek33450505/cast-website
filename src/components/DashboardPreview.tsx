@@ -20,8 +20,8 @@ export function DashboardPreview() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          A full React dashboard with real-time SSE event streaming. Track sessions, token spend,
-          agent activity, hook health, and model routing analytics — all from your browser.
+          The CAST Dashboard v2.1 — a React 19 + Express 5 app with real-time SSE streaming.
+          Seven pages covering sessions, analytics, swarm activity, agent registry, system config, and documentation.
         </motion.p>
 
         <motion.div
@@ -38,26 +38,26 @@ export function DashboardPreview() {
               <div className="w-3 h-3 rounded-full bg-[var(--chrome-yellow)]" />
               <div className="w-3 h-3 rounded-full bg-[var(--chrome-green)]" />
               <div className="ml-4 flex-1 bg-[var(--bg-primary)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono">
-                localhost:5173/activity
+                localhost:5173
               </div>
             </div>
             {/* Placeholder content */}
             <div className="relative h-64 md:h-96 bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-primary)] flex items-center justify-center">
               <div className="text-center space-y-4">
                 <p className="text-2xl md:text-3xl font-bold text-[var(--accent)]/50">
-                  CAST Dashboard
+                  CAST Dashboard v2.1
                 </p>
                 <p className="text-sm text-[var(--text-muted)]">
-                  Real-time agent observability
+                  Swarm visualization · Agent registry · Quality gate analytics
                 </p>
                 <div className="flex flex-wrap justify-center gap-6 text-xs text-[var(--text-muted)]">
+                  <span>Dashboard</span>
                   <span>Sessions</span>
                   <span>Analytics</span>
+                  <span>Swarm</span>
                   <span>Agents</span>
-                  <span>Token Spend</span>
-                  <span>Hooks</span>
-                  <span>Live Events</span>
-                  <span>Model Routing</span>
+                  <span>System</span>
+                  <span>Docs</span>
                 </div>
               </div>
             </div>

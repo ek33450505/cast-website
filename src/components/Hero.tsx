@@ -36,7 +36,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          A local-first multi-agent framework for Claude Code
+          The production control plane for Claude Code agent teams
         </motion.p>
 
         {/* Install commands */}

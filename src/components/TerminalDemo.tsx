@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion'
 
 const lines = [
-  { text: '$ claude "Add rate limiting to the API"', type: 'command' as const },
+  { text: '$ claude "Build the new auth module"', type: 'command' as const },
   { text: '⟡ [CAST-DISPATCH] → planner (sonnet)', type: 'dispatch' as const },
-  { text: '  ✓ Plan written: 3 batches, 5 agents', type: 'success' as const },
-  { text: '⟡ [CAST-DISPATCH] → code-writer (sonnet)', type: 'dispatch' as const },
-  { text: '  ✓ 4 files modified, 127 lines added', type: 'success' as const },
+  { text: '  ✓ Plan: 2 waves, 4 agents, swarm mode', type: 'success' as const },
+  { text: '⟡ [SWARM] fullstack-team — 3 teammates', type: 'dispatch' as const },
+  { text: '  ↳ code-writer: API routes + middleware', type: 'success' as const },
+  { text: '  ↳ test-writer: integration tests', type: 'success' as const },
+  { text: '  ↳ docs: API documentation', type: 'success' as const },
+  { text: '⟡ [PEER] code-writer → test-writer: routes ready', type: 'dispatch' as const },
+  { text: '  ✓ All teammates complete — 3/3', type: 'success' as const },
   { text: '⟡ [CAST-CHAIN] → code-reviewer (haiku)', type: 'dispatch' as const },
-  { text: '  ✓ LGTM — no issues found', type: 'success' as const },
-  { text: '⟡ [CAST-CHAIN] → commit (haiku)', type: 'dispatch' as const },
-  { text: '  ✓ feat: add rate limiting middleware', type: 'success' as const },
+  { text: '  ✓ LGTM — merged to main', type: 'success' as const },
 ]
 
 const lineColors = {
