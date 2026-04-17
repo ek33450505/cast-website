@@ -7,11 +7,10 @@ export interface Agent {
 }
 
 export const agents: Agent[] = [
-  // Core (17)
+  // Core (16)
   { name: 'code-writer', model: 'sonnet', effort: 'high', purpose: 'Feature implementation across files', category: 'core' },
   { name: 'debugger', model: 'sonnet', effort: 'high', purpose: 'Root-cause diagnosis and bug fixes', category: 'core' },
   { name: 'planner', model: 'sonnet', effort: 'high', purpose: 'Sequenced task plans with Agent Dispatch Manifests', category: 'core' },
-  { name: 'orchestrator', model: 'sonnet', effort: 'high', purpose: 'Multi-agent plan execution and Agent Teams coordinator', category: 'core' },
   { name: 'researcher', model: 'sonnet', effort: 'high', purpose: 'Multi-source analysis, gap reports, and citations', category: 'core' },
   { name: 'security', model: 'sonnet', effort: 'high', purpose: 'Auth, input validation, secrets, and vulnerability audit', category: 'core' },
   { name: 'merge', model: 'haiku', effort: 'low', purpose: 'Git merges, rebases, and conflict resolution', category: 'core' },

@@ -76,6 +76,7 @@ export function Ecosystem() {
                 href={comp.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${comp.name} on GitHub (opens in new tab)`}
                 className="inline-flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
               >
                 <ExternalLink className="h-3 w-3" />

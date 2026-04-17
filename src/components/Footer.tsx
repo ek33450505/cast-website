@@ -27,6 +27,7 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${link.label} (opens in new tab)`}
                 className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
               >
                 {link.label}
@@ -54,18 +55,19 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-6 border-t border-[var(--glass-border)] text-center">
           <p className="text-xs text-[var(--text-muted)]">
-            &copy; 2026 Edward Kubiak
+            &copy; {new Date().getFullYear()} Edward Kubiak
           </p>
         </div>
 
         {/* Back to top */}
         <div className="flex justify-center mt-4">
-          <a
-            href="#"
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
           >
             Back to top
-          </a>
+          </button>
         </div>
       </div>
     </footer>

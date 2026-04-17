@@ -21,7 +21,7 @@ export function DashboardPreview() {
           transition={{ delay: 0.1 }}
         >
           The CAST Dashboard v2.1 — a React 19 + Express 5 app with real-time SSE streaming.
-          Seven pages covering sessions, analytics, swarm activity, agent registry, system config, and documentation.
+          Seven pages: Activity, Sessions, Analytics, Swarm, Agents, System, and Docs.
         </motion.p>
 
         <motion.div
@@ -41,23 +41,49 @@ export function DashboardPreview() {
                 localhost:5173
               </div>
             </div>
-            {/* Placeholder content */}
-            <div className="relative h-64 md:h-96 bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-primary)] flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <p className="text-2xl md:text-3xl font-bold text-[var(--accent)]/50">
-                  CAST Dashboard v2.1
-                </p>
-                <p className="text-sm text-[var(--text-muted)]">
-                  Swarm visualization · Agent registry · Quality gate analytics
-                </p>
-                <div className="flex flex-wrap justify-center gap-6 text-xs text-[var(--text-muted)]">
-                  <span>Dashboard</span>
-                  <span>Sessions</span>
-                  <span>Analytics</span>
-                  <span>Swarm</span>
-                  <span>Agents</span>
-                  <span>System</span>
-                  <span>Docs</span>
+            {/* Animated mock dashboard UI */}
+            <div className="bg-[var(--bg-primary)] min-h-[320px] md:min-h-[400px]">
+              {/* Tab bar */}
+              <div className="flex gap-1 px-4 pt-3 border-b border-[var(--glass-border)] overflow-x-auto">
+                {['Activity', 'Sessions', 'Analytics', 'Swarm', 'Agents', 'System', 'Docs'].map((tab, i) => (
+                  <span
+                    key={tab}
+                    className={`px-3 py-2 text-xs font-medium rounded-t whitespace-nowrap ${
+                      i === 0
+                        ? 'text-[var(--accent)] border-b-2 border-[var(--accent)] bg-[var(--accent-subtle)]'
+                        : 'text-[var(--text-muted)]'
+                    }`}
+                  >
+                    {tab}
+                  </span>
+                ))}
+              </div>
+              {/* Metric cards */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4">
+                {[
+                  { label: 'Sessions Today', value: '12', delta: '+3' },
+                  { label: 'Agents Fired', value: '47', delta: '+8' },
+                  { label: 'Quality Gates', value: '31', delta: '100%' },
+                  { label: 'Token Spend', value: '$0.84', delta: '-12%' },
+                ].map((card) => (
+                  <div key={card.label} className="bento-card p-3 space-y-1">
+                    <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-wide">{card.label}</p>
+                    <p className="text-xl font-bold font-mono text-[var(--text-primary)]">{card.value}</p>
+                    <p className="text-xs text-[var(--accent)]">{card.delta}</p>
+                  </div>
+                ))}
+              </div>
+              {/* Sparkline row — CSS-only bars */}
+              <div className="px-4 pb-4">
+                <p className="text-[10px] text-[var(--text-muted)] mb-2 uppercase tracking-wide">Agent dispatches (last 7 days)</p>
+                <div className="flex items-end gap-1 h-12">
+                  {[3, 7, 5, 12, 8, 15, 9].map((h, i) => (
+                    <div
+                      key={i}
+                      className="flex-1 rounded-sm bg-[var(--accent)]/30"
+                      style={{ height: `${(h / 15) * 100}%` }}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

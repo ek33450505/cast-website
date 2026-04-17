@@ -11,7 +11,7 @@ const lines = [
   { text: '⟡ [PEER] code-writer → test-writer: routes ready', type: 'dispatch' as const },
   { text: '  ✓ All teammates complete — 3/3', type: 'success' as const },
   { text: '⟡ [CAST-CHAIN] → code-reviewer (haiku)', type: 'dispatch' as const },
-  { text: '  ✓ LGTM — merged to main', type: 'success' as const },
+  { text: '  ✓ LGTM — ready to commit', type: 'success' as const },
 ]
 
 const lineColors = {
@@ -58,8 +58,8 @@ export function TerminalDemo() {
         whileInView="show"
         viewport={{ once: true, margin: '-50px' }}
       >
-        {lines.map((line, i) => (
-          <motion.div key={i} variants={item} className={lineColors[line.type]}>
+        {lines.map((line) => (
+          <motion.div key={line.text} variants={item} className={lineColors[line.type]}>
             {line.text}
           </motion.div>
         ))}

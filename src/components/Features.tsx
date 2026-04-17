@@ -13,7 +13,7 @@ const features: Feature[] = [
     icon: Users,
     title: 'Agent Teams',
     description:
-      '31 specialists across 4 tiers. Swarm Control Plane bootstraps parallel agent teams from YAML. Each teammate gets an isolated git worktree and quality gates.',
+      '30 specialists across 4 tiers. Swarm Control Plane bootstraps parallel agent teams from YAML. Each teammate gets an isolated git worktree and quality gates.',
   },
   {
     icon: Shield,
@@ -31,7 +31,7 @@ const features: Feature[] = [
     icon: Zap,
     title: 'Token Optimization',
     description:
-      '5-layer cost reduction: model tiering (21 Haiku / 10 Sonnet), Caveman Mode, RTK Hook with 60-89% compression, Thinking Budgets, and Compact Discipline. 30-50% savings.',
+      '5-layer cost reduction: model tiering (21 Haiku / 9 Sonnet), Laconic Mode, RTK Hook with 60-89% compression, Thinking Budgets, and Compact Discipline. 30-50% savings.',
   },
   {
     icon: HardDrive,
@@ -43,7 +43,7 @@ const features: Feature[] = [
     icon: Puzzle,
     title: 'Extensible',
     description:
-      'Agents are markdown files. Hooks are bash scripts. Plans are JSON. 14 skills, 19 slash commands, and 4 MCP integrations — Todoist, Calendar, Gmail, Obsidian.',
+      'Agents are markdown files. Hooks are bash scripts. Plans are JSON. 16 skills, 19 slash commands, and 4 MCP integrations — Todoist, Calendar, Gmail, Obsidian.',
   },
   {
     icon: Radio,

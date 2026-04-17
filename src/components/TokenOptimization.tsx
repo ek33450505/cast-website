@@ -9,8 +9,8 @@ interface OptLayer {
 }
 
 const layers: OptLayer[] = [
-  { icon: Users, label: 'Model Tiering', detail: '21 Haiku / 10 Sonnet — right model for each task' },
-  { icon: Zap, label: 'Caveman Mode', detail: '15-25% output reduction via terse response rules' },
+  { icon: Users, label: 'Model Tiering', detail: '21 Haiku / 9 Sonnet — right model for each task' },
+  { icon: Zap, label: 'Laconic Mode', detail: 'Terse output (lite/full/ultra) cutting prose tokens' },
   { icon: ArrowRight, label: 'RTK Hook', detail: '60-89% compression on tool outputs' },
   { icon: Cpu, label: 'Thinking Budgets', detail: 'Per-agent extended thinking tiers (0-8192 tokens)' },
   { icon: CheckCircle, label: 'Compact Discipline', detail: 'Auto-trigger at 40 tool calls per session' },
@@ -29,7 +29,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 }
 
-export function ContractorRouting() {
+export function TokenOptimization() {
   return (
     <section className="py-20 md:py-32 px-4">
       <div className="max-w-6xl mx-auto">
@@ -87,11 +87,11 @@ export function ContractorRouting() {
             <p className="text-xs text-[var(--text-muted)]">token savings</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-[var(--accent)]">21/10</p>
+            <p className="text-2xl font-bold font-mono text-[var(--accent)]">21/9</p>
             <p className="text-xs text-[var(--text-muted)]">Haiku/Sonnet split</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-[var(--accent)]">525</p>
+            <p className="text-2xl font-bold font-mono text-[var(--accent)]">501</p>
             <p className="text-xs text-[var(--text-muted)]">tests passing</p>
           </div>
         </motion.div>

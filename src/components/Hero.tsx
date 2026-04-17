@@ -4,7 +4,7 @@ import { CopyButton } from './CopyButton'
 import { TerminalDemo } from './TerminalDemo'
 import { MetricsStrip } from './MetricsStrip'
 
-const installCmd = 'brew tap ek33450505/cast && brew install cast'
+const installCmd = 'brew tap ek33450505/cast && brew install cast && cast doctor'
 const pluginCmd = 'claude plugin install github:ek33450505/claude-agent-team'
 
 export function Hero() {

@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
 interface MetricProps {
@@ -7,28 +7,36 @@ interface MetricProps {
   label: string
 }
 
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3)
+}
+
 function AnimatedMetric({ value, suffix = '', label }: MetricProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true })
+  const prefersReduced = useReducedMotion()
   const [display, setDisplay] = useState(0)
 
   useEffect(() => {
     if (!isInView) return
+    if (prefersReduced) {
+      setDisplay(value)
+      return
+    }
     const duration = 1500
-    const steps = 40
-    const increment = value / steps
-    let current = 0
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= value) {
-        setDisplay(value)
-        clearInterval(timer)
-      } else {
-        setDisplay(Math.floor(current))
+    const start = performance.now()
+    let raf: number
+    function tick(now: number) {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      setDisplay(Math.round(easeOutCubic(progress) * value))
+      if (progress < 1) {
+        raf = requestAnimationFrame(tick)
       }
-    }, duration / steps)
-    return () => clearInterval(timer)
-  }, [isInView, value])
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [isInView, value, prefersReduced])
 
   return (
     <div ref={ref} className="flex flex-col items-center gap-1">
@@ -41,8 +49,8 @@ function AnimatedMetric({ value, suffix = '', label }: MetricProps) {
 }
 
 const metrics = [
-  { value: 31, label: 'Agents' },
-  { value: 525, label: 'Tests' },
+  { value: 30, label: 'Agents' },
+  { value: 501, label: 'Tests' },
   { value: 13, label: 'Repos' },
   { value: 450, suffix: '+', label: 'Cloners' },
 ]

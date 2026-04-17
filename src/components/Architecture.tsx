@@ -16,7 +16,7 @@ const nodes: PipelineNode[] = [
   {
     title: 'CLAUDE.md Dispatch',
     color: 'var(--accent)',
-    annotation: '31-agent routing table',
+    annotation: '30-agent routing table',
   },
   {
     title: 'PreToolUse Hooks',
@@ -62,7 +62,7 @@ const nodes: PipelineNode[] = [
     title: 'Dashboard v2.1',
     color: 'var(--accent)',
     annotation: 'React 19 + Express 5 + SSE',
-    subItems: ['Dashboard', 'Sessions', 'Analytics', 'Swarm', 'Agents', 'System', 'Docs'],
+    subItems: ['Activity', 'Sessions', 'Analytics', 'Swarm', 'Agents', 'System', 'Docs'],
     subItemStyle: 'pills',
   },
 ]

@@ -1,9 +1,10 @@
+import React from 'react'
 import { motion } from 'framer-motion'
 import { agents } from '@/data/agents'
 import { cn } from '@/lib/utils'
 
 const categories = [
-  { key: 'core' as const, label: 'Core', count: 17 },
+  { key: 'core' as const, label: 'Core', count: 16 },
   { key: 'dev-workflow' as const, label: 'Dev Workflow', count: 6 },
   { key: 'productivity' as const, label: 'Productivity', count: 5 },
   { key: 'knowledge' as const, label: 'Knowledge & Career', count: 3 },
@@ -33,7 +34,7 @@ export function AgentRoster() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          31 specialist agents across 4 categories — each with a defined role and model tier.
+          30 specialist agents across 4 categories — each with a defined role and model tier.
         </motion.p>
 
         {/* Desktop table */}
@@ -55,8 +56,8 @@ export function AgentRoster() {
             </thead>
             <tbody>
               {agentsByCategory.map((group) => (
-                <>
-                  <tr key={`header-${group.key}`} className="bg-[var(--bg-tertiary)]">
+                <React.Fragment key={group.key}>
+                  <tr className="bg-[var(--bg-tertiary)]">
                     <td colSpan={5} className="px-6 py-3 font-semibold text-[var(--text-primary)]">
                       {group.label} <span className="text-[var(--text-muted)] font-normal">({group.count})</span>
                     </td>
@@ -98,7 +99,7 @@ export function AgentRoster() {
                       <td className="px-6 py-3 text-[var(--text-muted)]">{agent.purpose}</td>
                     </tr>
                   ))}
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>
